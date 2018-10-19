@@ -1,0 +1,18 @@
+<%- include('header',{title:"AddAticle"})-%>
+<div class="container">
+  <h1>
+    Login
+  </h1>
+  <form action="/users/login" method='POST'>
+    <div class="form-group">
+      <label for="">Username:</label>
+      <input class="form-control" type="text" name="username"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="">Password:</label>
+      <input class="form-control" type="password" name="password"></textarea>
+    </div>
+    <input class="btn-primary" type="submit" value="Submit">
+  </form>
+  <%- include('footer') -%>
+</div>

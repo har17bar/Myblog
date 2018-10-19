@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%- title%>
+  </title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="shortcut icon" type="image/png" href="https://findicons.com/files/icons/2372/pinkstrip/128/blogger.png" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">HarBlog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <% if(user){ %>
+          <li class="nav-item">
+            <a class="nav-link" href="/articles/add">AddArticle</a>
+          </li>
+          <% } %>
+        </ul>
+        <ul class="navbar-nav navbar-right ">
+          <% if(user){ %>
+          <li class="nav-item">
+            <a class="nav nav-link" href="/users/logout">Logout <span class="sr-only">(current)</span></a>
+          </li>
+          <% } else{ %>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/register">Register <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav nav-link" href="/users/login">Login <span class="sr-only">(current)</span></a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <br>
+  <div class="container">
+    <%- messages('message', locals) %>
+  </div>

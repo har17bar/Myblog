@@ -1,0 +1,29 @@
+<%- include('header',{title:"EditArticle"})-%>
+<% if (errors) { %>
+<% errors.forEach(function(error){ %>
+<div class="alert alert-danger">
+    <%= error.msg %>
+</div>
+<% }); %>
+<% } %>
+<div class="container">
+    <h1>
+        <%= desc %>
+    </h1>
+    <form action="/articles/edit/<%=article._id %>" method='POST'>
+        <div class="form-group">
+            <label for="">Title:</label>
+            <input class="form-control" value="<%=article.title%> " type="text" name="title" type="text">
+        </div>
+        <div class="form-group">
+            <label for="">Author:</label>
+            <input class="form-control" value="<%=article.author %>" type="text" name="author" type="text">
+        </div>
+        <div class="form-group">
+            <label for="">Body:</label>
+            <textarea class="form-control" name="body" cols="30" rows="10"><%=article.body %></textarea>
+        </div>
+        <input class="btn-primary" type="submit" value="Submit">
+    </form>
+    <%- include('footer') -%>
+</div>

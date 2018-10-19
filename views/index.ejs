@@ -1,0 +1,15 @@
+<%- include("header",{title:"Home"}) %>
+<div class="container">
+    <h1>
+        <%=desc%>
+    </h1>
+    <ul class=" list-group">
+        <% articles.forEach(function(article){ %>
+        <li class="list-group-item">
+            <a href='articles/<%= article._id %>'>
+                <%=article.title%></a>
+        </li>
+        <% }); %>
+    </ul>
+    <%- include('footer') -%>
+</div>

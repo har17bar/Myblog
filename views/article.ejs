@@ -1,0 +1,19 @@
+<%- include("header",{title:"item"}) %>
+<div class="container">
+    <h1>
+        <%=article.title %>
+    </h1>
+    <h5>Writen by
+        <%=author %>
+    </h5>
+    <p>
+        <%=article.body %>
+    </p>
+    <hr>
+    <% if ( user.id && user.id == article.author){ %>
+    <a class="btn btn-secondary" href="/articles/edit/<%= article._id %>">Edit</a>
+    <a class="btn btn-danger delete-article" data-id="<%= article._id %>" href="#">Delete</a>
+    <% } %>
+
+    <%-include('footer')-%>
+</div>
